@@ -1,0 +1,25 @@
+.table{
+    margin-top: 50px;
+    font-size: 16px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+.table td{
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table tr:first-of-type{
+    background-color: black;
+    color: white;
+}
+
+
+.odd{
+    background-color: #ddd;
+}
+.even{
+    background-color: #bbb;
+}

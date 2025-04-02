@@ -1,0 +1,21 @@
+# Node modules (instalirani paketi)
+node_modules/
+
+# Environment varijable (lozinke, API ključevi itd.)
+.env
+
+# Log datoteke
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Sistemske datoteke
+.DS_Store
+Thumbs.db
+
+# Editor privremeni fajlovi
+.vscode/
+.idea/
+*.swp

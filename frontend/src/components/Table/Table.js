@@ -5,7 +5,7 @@ function Table() {
   const [dataList, setDataList] = useState([]);
 
   useEffect(() => {
-    fetch('/data.json')
+    fetch('http://localhost:5000/api/readings')
       .then(res => res.json())
       .then(data => setDataList(data))
       .catch(err => console.error('Error on loading JSON:', err));

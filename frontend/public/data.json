@@ -2,67 +2,80 @@
     {
       "temperature": 25.4,
       "humidity": 41.2,
-      "timestamp": "2025-04-01T10:00:00"
+      "timestamp": "2025-04-01T10:00:00",
+      "userid": 1
     },
     {
       "temperature": 25.6,
       "humidity": 42.0,
-      "timestamp": "2025-04-01T10:10:00"
+      "timestamp": "2025-04-01T10:10:00",
+      "userid": 1
     },
     {
       "temperature": 25.8,
       "humidity": 42.3,
-      "timestamp": "2025-04-01T10:20:00"
+      "timestamp": "2025-04-01T10:20:00",
+      "userid": 1
     },
     {
       "temperature": 26.1,
       "humidity": 43.0,
-      "timestamp": "2025-04-01T10:30:00"
+      "timestamp": "2025-04-01T10:30:00",
+      "userid": 2
     },
     {
       "temperature": 26.1,
       "humidity": 43.0,
-      "timestamp": "2025-04-01T10:40:00"
+      "timestamp": "2025-04-01T10:40:00",
+      "userid": 2
     },
     {
       "temperature": 26.1,
       "humidity": 43.0,
-      "timestamp": "2025-04-01T10:50:00"
+      "timestamp": "2025-04-01T10:50:00",
+      "userid": 3
     },
     {
       "temperature": 26.1,
       "humidity": 43.0,
-      "timestamp": "2025-04-01T11:00:00"
+      "timestamp": "2025-04-01T11:00:00",
+      "userid": 3
     },
     {
       "temperature": 26.1,
       "humidity": 43.0,
-      "timestamp": "2025-04-01T11:10:00"
+      "timestamp": "2025-04-01T11:10:00",
+      "userid": 2
     },
     {
       "temperature": 26.1,
       "humidity": 43.0,
-      "timestamp": "2025-04-01T11:20:00"
+      "timestamp": "2025-04-01T11:20:00",
+      "userid": 1
     },
     {
       "temperature": 26.1,
       "humidity": 43.0,
-      "timestamp": "2025-04-01T11:30:00"
+      "timestamp": "2025-04-01T11:30:00",
+      "userid": 2
     },
     {
       "temperature": 26.1,
       "humidity": 43.0,
-      "timestamp": "2025-04-01T11:40:00"
+      "timestamp": "2025-04-01T11:40:00",
+      "userid": 3
     },
     {
       "temperature": 26.1,
       "humidity": 43.0,
-      "timestamp": "2025-04-01T11:50:00"
+      "timestamp": "2025-04-01T11:50:00",
+      "userid": 2
     },
     {
       "temperature": 29.1,
       "humidity": 43.0,
-      "timestamp": "2025-04-01T12:00:00"
+      "timestamp": "2025-04-01T12:00:00",
+      "userid": 1
     }
   ]
   

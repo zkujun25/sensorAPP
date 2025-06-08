@@ -8,20 +8,21 @@ function Table() {
 
   useEffect(() => {
     const storedUserId = parseInt(localStorage.getItem("userid"));
-const storedUsername = localStorage.getItem("username");
+    const storedUsername = localStorage.getItem("username");
 
-fetch("http://localhost:5000/api/readings")
-  .then((res) => res.json())
-  .then((data) => {
-    if (storedUsername === "Administrator") {
-      setDataList(data);
-    } else {
-      const userReadings = data.filter(
-        (item) => item.userid === storedUserId
-      );
-      setDataList(userReadings);
-    }
-  }).catch((err) => console.error("Error fetching readings:", err));
+    fetch("http://localhost:5000/api/readings")
+      .then((res) => res.json())
+      .then((data) => {
+        if (storedUsername === "Administrator") {
+          setDataList(data);
+        } else {
+          const userReadings = data.filter(
+            (item) => item.userid === storedUserId
+          );
+          setDataList(userReadings);
+        }
+      })
+      .catch((err) => console.error("Error fetching readings:", err));
   }, []);
 
   const totalPages = Math.ceil(dataList.length / itemsPerPage);
@@ -50,6 +51,15 @@ fetch("http://localhost:5000/api/readings")
     }
   };
 
+  const admin = localStorage.getItem("username") === "Administrator";
+
+  const getRoom = (number) =>{
+    if(number === 2)
+      return "Sleeping room";
+    else
+      return "Bathroom";
+  };
+
   return (
     <>
       {currentData.length > 0 ? (
@@ -60,6 +70,7 @@ fetch("http://localhost:5000/api/readings")
                 <th>Temperature</th>
                 <th>Humidity</th>
                 <th>Time</th>
+                {admin ? <th>Room</th> : ""}
               </tr>
             </thead>
             <tbody>
@@ -71,13 +82,17 @@ fetch("http://localhost:5000/api/readings")
                   <td>{entry.temperature} °C</td>
                   <td>{entry.humidity} %</td>
                   <td>{new Date(entry.timestamp).toLocaleString()}</td>
+                  {admin ? <td>{getRoom(entry.userid)}</td> : ""}
                 </tr>
               ))}
             </tbody>
           </table>
 
           <div className={styles.pagination}>
-            <button onClick={() => goToPage(currentPage - 1)} disabled={currentPage === 1}>
+            <button
+              onClick={() => goToPage(currentPage - 1)}
+              disabled={currentPage === 1}
+            >
               PREV
             </button>
 
@@ -91,7 +106,10 @@ fetch("http://localhost:5000/api/readings")
               </button>
             ))}
 
-            <button onClick={() => goToPage(currentPage + 1)} disabled={currentPage === totalPages}>
+            <button
+              onClick={() => goToPage(currentPage + 1)}
+              disabled={currentPage === totalPages}
+            >
               Next
             </button>
           </div>

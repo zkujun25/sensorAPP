@@ -11,7 +11,7 @@ function Data() {
   return (
     <div className = {styles.wrapper}>
         <p>You are looking at the data of</p>
-        <h1>{username}</h1>
+        <h1>{username !== "Administrator" ? "the " + username : "the whole house"}</h1>
         <Table></Table>
         <button className={styles.button} onClick={logout}>LOGOUT</button>
     </div>

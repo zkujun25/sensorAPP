@@ -6,7 +6,7 @@ const dotenv = require('dotenv');
 const Reading = require('./models/Reading');
 const User = require('./models/Users.js');
 
-const ESP_URL = 'http://192.168.1.120/data';
+const ESP_URL = 'http://192.168.43.251/data';
 const USER_ID = 2; 
 
 dotenv.config();
@@ -23,7 +23,7 @@ mongoose.connect(process.env.MONGO_URI, {
 
 app.get('/api/readings', async (req, res) => {
   try {
-    const readings = await Reading.find().sort({ timestamp: -1 }).limit(20);
+    const readings = await Reading.find().sort({ timestamp: -1 });
     res.json(readings);
   } catch (err) {
     res.status(500).json({ error: err.message });
@@ -65,28 +65,28 @@ app.get('/', (req,res) => {
   res.send("Server radi!");
 });
 
-setInterval(async () => {
-  try {
-    const response = await axios.get(ESP_URL);
-    const data = response.data;
+// setInterval(async () => {
+//   try {
+//     const response = await axios.get(ESP_URL);
+//     const data = response.data;
 
-    if (data.temperature !== -1 && data.humidity !== -1) {
-      const newReading = new Reading({  
-        temperature: data.temperature,
-        humidity: data.humidity,
-        timestamp: new Date(),
-        userid: USER_ID
-      });
+//     if (data.temperature !== -1 && data.humidity !== -1) {
+//       const newReading = new Reading({  
+//         temperature: data.temperature,
+//         humidity: data.humidity,
+//         timestamp: new Date(),
+//         userid: USER_ID
+//       });
 
-      await newReading.save();
-      console.log(`Spremljeno očitanje sa ESP32: ${JSON.stringify(data)}`);
-    } else {
-      console.warn('Nevaljano očitanje sa senzora (temperature/humidity === -1)');
-    }
-  } catch (error) {
-    console.error('Greška pri dohvaćanju s ESP32:', error.message);
-  }
-}, 30 * 1000);
+//       await newReading.save();
+//       console.log(`Spremljeno očitanje sa ESP32: ${JSON.stringify(data)}`);
+//     } else {
+//       console.warn('Nevaljano očitanje sa senzora (temperature/humidity === -1)');
+//     }
+//   } catch (error) {
+//     console.error('Greška pri dohvaćanju s ESP32:', error.message);
+//   }
+// }, 10 * 1000);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server started on port: ${PORT}`));

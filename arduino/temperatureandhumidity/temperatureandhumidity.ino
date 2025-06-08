@@ -4,8 +4,8 @@
 #include <ESPmDNS.h>
 #include <DHT.h>
 
-const char *ssid = "SCastro";
-const char *password = "briosa2017";
+const char *ssid = "Zvone";
+const char *password = "05022000";
 
 WebServer server(80);
 DHT dht(4, DHT22);

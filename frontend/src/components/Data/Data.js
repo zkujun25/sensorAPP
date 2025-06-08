@@ -10,8 +10,8 @@ function Data() {
   const username = localStorage.getItem("username");
   return (
     <div className = {styles.wrapper}>
-        <p>Hello, {username}</p>
-        <h1>Temperature and Humidity data</h1>
+        <p>You are looking at the data of</p>
+        <h1>{username}</h1>
         <Table></Table>
         <button className={styles.button} onClick={logout}>LOGOUT</button>
     </div>

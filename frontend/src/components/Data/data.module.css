@@ -4,10 +4,20 @@
   border-radius: 30px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.wrapper h1{
+  margin: 0;
+}
+.wrapper Table{
+  margin-top: 25px;
 }
 .button {
   margin-top: 1rem;
-  background-color: #ddd;
+  background-color: #bbb;
   border: none;
   padding: 12px 20px;
   font-size: 16px;
@@ -16,7 +26,23 @@
   transition: background 0.3s ease;
   width: 100%;
 }
-
 .button:hover {
+  background-color: #aaa;
+}
+.settings {
+  margin-top: 1rem;
+  background-color: #ddd;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 120px;
+  position: absolute;
+  top:50px;
+  right: 30%;
+}
+.settings:hover {
   background-color: #bbb;
 }

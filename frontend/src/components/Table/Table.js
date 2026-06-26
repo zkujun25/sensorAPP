@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./table.module.css";
 
-function Table() {
+function Table({configs}) {
   const [dataList, setDataList] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 15;
@@ -53,11 +53,9 @@ function Table() {
 
   const admin = localStorage.getItem("username") === "Administrator";
 
-  const getRoom = (number) =>{
-    if(number === 2)
-      return "Sleeping room";
-    else
-      return "Bathroom";
+  const getRoomName = (uid) => {
+    const config = configs.find(c => c.userId === uid);
+    return config?.roomName || 'Unknown';
   };
 
   return (
@@ -82,7 +80,7 @@ function Table() {
                   <td>{entry.temperature} °C</td>
                   <td>{entry.humidity} %</td>
                   <td>{new Date(entry.timestamp).toLocaleString()}</td>
-                  {admin ? <td>{getRoom(entry.userid)}</td> : ""}
+                  {admin ? <td>{getRoomName(entry.userid)}</td> : ""}
                 </tr>
               ))}
             </tbody>

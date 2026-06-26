@@ -78,7 +78,7 @@ void setup() {
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP());
 
-  if (MDNS.begin("esp321")) {
+  if (MDNS.begin("esp323")) {
     Serial.println("MDNS responder started");
   }
 

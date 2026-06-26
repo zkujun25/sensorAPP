@@ -6,7 +6,8 @@ const readingSchema = new mongoose.Schema({
   timestamp: {
     type: Date,
     default: Date.now
-  }
+  },
+  userid: Number
 });
 
 module.exports = mongoose.model('Reading', readingSchema);

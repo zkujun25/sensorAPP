@@ -4,14 +4,17 @@
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
+    min-width: 640px;
 }
 
 .table td{
+    height: 12px;
     text-align: center;
     vertical-align: middle;
 }
 
-.table tr:first-of-type{
+.table thead th{
+    height: 12px;
     background-color: black;
     color: white;
 }
@@ -22,4 +25,27 @@
 }
 .even{
     background-color: #bbb;
+}
+.pagination {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 6px 12px;
+  border: none;
+  background-color: #ddd;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.pagination button:disabled {
+  background-color: #aaa;
+  cursor: default;
+}
+
+.pagination .active {
+  background-color: #333;
+  color: white;
 }

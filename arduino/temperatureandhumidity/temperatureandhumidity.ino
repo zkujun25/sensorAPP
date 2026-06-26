@@ -4,7 +4,7 @@
 #include <ESPmDNS.h>
 #include <DHT.h>
 
-const char *ssid = "Hxii8djwjyi";
+const char *ssid = "Zvone";
 const char *password = "05022000";
 
 WebServer server(80);
@@ -78,7 +78,7 @@ void setup() {
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP());
 
-  if (MDNS.begin("esp32")) {
+  if (MDNS.begin("esp321")) {
     Serial.println("MDNS responder started");
   }
 
